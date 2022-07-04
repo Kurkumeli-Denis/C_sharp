@@ -3,31 +3,31 @@
 
 if (day == 1)
 {
-Console.WriteLine("Понедельник это будний");
+Console.WriteLine("НЕТ");
 }
 else if (day == 2)
 {
-Console.WriteLine("Вторник это будний");
+Console.WriteLine("НЕТ");
 }
 else if (day == 3)
 {
-Console.WriteLine("Среда это будний");
+Console.WriteLine("НЕТ");
 }
 else if (day == 4)
 {
-Console.WriteLine("Четверг это будний");
+Console.WriteLine("НЕТ");
 }
 else if (day == 5)
 {
-Console.WriteLine("Пятница это будний");
+Console.WriteLine("НЕТ");
 }
 else if (day == 6)
 {
-Console.WriteLine("Суббота это выходной");
+Console.WriteLine("ДА");
 }
 else if (day == 7)
 {
-Console.WriteLine("Воскресенье это выходной");
+Console.WriteLine("ДА");
 }
 else 
 {
