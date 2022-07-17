@@ -1,56 +1,35 @@
-﻿// поэллементно создать копию двумерного массива
+﻿// Сколько чисел больше 0 ввел пользователь
 
-void Print (int[,] array)
-{
-    int rows = array.GetUpperBound(0) + 1; // строки
-    int columns = array.Length / rows; // столбцы
-    for(int i=0; i<rows; i++)
+int [] Vvod()
+{     
+    Console.WriteLine("Введите количество чисел: ");
+    int M = Convert.ToInt32(Console.ReadLine());
+    int [] array = new int [M];
+    Console.WriteLine("Введите числа через Enter: ");
+
+    for (int i = 0; i < M; i++)
     {
-        for (int j = 0; j < columns; j++ )
-        {
-            Console.Write($"{array[i, j]} ");
-        }
-        Console.WriteLine();
+        array[i] = Convert.ToInt32(Console.ReadLine());
     }
     
+    return array;
 }
 
- int [,] MassNums (int rows, int columns)
- {
-     int [,] array = new int [rows, columns];
-     for(int i=0;i<rows; i++)
-     {
-
-        for(int j = 0; j < columns; j++)
-        {
-            array[i, j] = new Random().Next(1,10);
-        }
-     }
-     return array;
-}
-
-void Copy(int [,] mass)
+void Scolko(int [] mass)
 {
-    
-    int rows = mass.GetUpperBound(0) + 1; // строки
-    int columns = mass.Length / rows; // столбцы
-    for(int i = 0; i < rows ; i++)
+    int k = 0;
+    for(int i = 0; i < mass.Length; i++)
     {
-        for (int j = 0; j < columns; j++ )
+        if (mass[i] > 0)
         {
-           Console.Write( $"{mass[i , j]} ");
-
+            k++;
         }
-        Console.WriteLine();
     }
-    
+    Console.WriteLine($"Чисел больше 0: {k}");
 
-    
 }
 
+int [] Arr_1 = Vvod();
+Scolko(Arr_1);
 
-int [,] arr_1 = MassNums (3, 3);
-Print(arr_1);
-Console.WriteLine();
-Copy(arr_1);
 
