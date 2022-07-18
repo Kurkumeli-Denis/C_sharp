@@ -36,18 +36,18 @@ void SrArefmet(int [,] mass)
     double sum=0;
     int j = 0;
     int i = 0;
-    while (j < mass.GetLength(0))
+    while (j < mass.GetLength(1))
     {
         sum = 0;
         i = 0;
-        while ( i < mass.GetLength(1))
+        while ( i < mass.GetLength(0))
         {
             sum = sum + mass[i, j];
             
             i++;
           
         }
-        sum = sum / mass.GetLength(1);
+        sum = sum / mass.GetLength(0);
         Console.WriteLine($"Среднее арефметическое {j+1} столбца = {Math.Round(sum, 2)}");
         
         j++;
