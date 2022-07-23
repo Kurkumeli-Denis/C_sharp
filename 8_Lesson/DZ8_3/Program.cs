@@ -1,4 +1,4 @@
-﻿using System;
+﻿// Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 
 
 void Print (int[,] array)
@@ -34,28 +34,28 @@ void Print (int[,] array)
      return array;
 }
 
-int Stroka(int [,] mass) 
+
+
+int [,] Proizvedenie (int [,] mass, int [,] arr) 
 { 
-    int max = 0; 
-    int index = 0; 
-    int count = 0; 
-     
-     
-    for (int i = 0; i<mass.GetLength(0); i++) 
-    { 
-        int sum = 0; 
-        for (int j = 0; j<mass.GetLength(1); j++) 
-        { 
-            sum = sum + mass[i, j]; 
-         } 
-        if (max < sum) 
-        { 
-            max = sum; 
-            index = count  ; 
-        } 
-       count++; 
-    } 
-    return index; 
+    if (mass.GetLength(0) != arr.GetLength(1))
+    {
+        Console.WriteLine("Матрицы нельзя перемножить");
+    }
+
+    int [,] res = new int [mass.GetLength(0), arr.GetLength(1)];
+
+    for (int i = 0; i < mass.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            for (int k = 0; k < mass.GetLength(0); k++)
+            {
+                res[i,j] += mass[i,k] * arr[k,j];
+            }
+        }
+    }
+    return res;
 }
  
 
@@ -63,5 +63,9 @@ int [,] arr_1 = MassNums ();
 Console.WriteLine(); 
 Print(arr_1); 
 Console.WriteLine(); 
-int index = Stroka(arr_1); 
-Console.WriteLine(index);
+int [,] arr_2 = MassNums (); 
+Console.WriteLine(); 
+Print(arr_2); 
+Console.WriteLine(); 
+int [,] arr_3 = Proizvedenie(arr_1, arr_2);
+Print (arr_3);
